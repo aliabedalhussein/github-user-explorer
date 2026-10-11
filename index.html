@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub User Explorer</title>
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="js/main.js" type="module"></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <h1> GitHub User Explorer</h1>
+        <p>Search GitHub users and explore their repositories.</p>
+    </header>
+
+    <main class="container">
+        <section class="search-area" >
+            <h2 id="search-heading"> Find a Github User </h2>
+
+            <form id="search-form">
+                <input type="text" id="username" aria-label="GitHub Username" placeholder="Enter username..." autocomplete="off" required>
+
+                <button type="submit" id="search-btn"> Search </button>
+
+            </form>
+        </section>
+
+        <section class="result-area">
+            <p id="loading-message" hidden> Loading GitHub data... </p>
+            <p id="error-message" role="alert" hidden> </p>
+
+            <section id="user-profile" hidden>
+
+            </section>
+            
+            <section class="repository-area" hidden>
+                <h2> Repositories </h2>
+
+                <div class="repository-controls">
+                    <label for="sort-repositories">Sort by:</label>
+
+                    <select id="sort-repositories">
+                        <option value="updated">Recently Updated</option>
+                        <option value="stars">Most Stars</option>
+                        <option value="name">Name (A-Z)</option>
+                    </select>
+
+                        <label for="filter-language">Language:</label>
+
+                        <select id="filter-language">
+                            <option value="all">All Languages</option>
+                            <option value="JavaScript">JavaScript</option>
+                            <option value="TypeScript">TypeScript</option>
+                            <option value="Python">Python</option>
+                            <option value="Java">Java</option>
+                            <option value="C++">C++</option>
+                            <option value="C#">C#</option>
+                        </select>
+                </div>
+
+                <div id="repository-list">
+
+                </div>
+
+                <nav id="pagination" hidden>
+
+                </nav>
+            </section>
+
+        </section>
+    </main>
+</body>
+
+</html>
